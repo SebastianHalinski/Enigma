@@ -35,7 +35,19 @@ public class ROT13 implements EnigmaService {
         return new String(values);
     }
 
+	public String decipher(String text){
+	return "dec("+text+")";
+}
 
+	public String getName(){
+		return this.name;
+	}
+
+	public boolean isKeyRequired(){
+		return KEY_REQUIRED;
+	}
+
+	public void setKey(String key) {}
 
 
 }
