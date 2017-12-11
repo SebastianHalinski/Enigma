@@ -11,6 +11,31 @@ public class ROT13 implements EnigmaService {
 		this.name = name;
 	}
 
+	public String encipher(String text){
+
+		char[] values = text.toCharArray();
+
+        for (int index = 0; index < values.length; index++) {
+            char letter = values[index];
+            if (letter >= 'a' && letter <= 'z') {
+                if (letter > 'm') {
+                    letter -= 13;
+                } else {
+                    letter += 13;
+                }
+            } else if (letter >= 'A' && letter <= 'Z') {
+                if (letter > 'M') {
+                    letter -= 13;
+                } else {
+                    letter += 13;
+                }
+            }
+            values[index] = letter;
+        }
+        return new String(values);
+    }
+
+
 
 
 }
