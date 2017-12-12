@@ -21,7 +21,7 @@ public class App {
         repo = new ServiceRepository();
         repo.register(new FakeEnigma("FakeEnigma"));
         repo.register(new ROT13("ROT13"));
-        repo.register(new Atbash("Atbash"))
+        repo.register(new Atbash("Atbash"));
 
         if (args[0].equals("-l")) {
             for (String s : repo.listAll()) {
