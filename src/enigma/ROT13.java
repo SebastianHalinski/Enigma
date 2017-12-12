@@ -36,7 +36,7 @@ public class ROT13 implements EnigmaService {
     }
 
 	public String decipher(String text){
-	return "dec("+text+")";
+	    return encipher(text);
 }
 
 	public String getName(){
