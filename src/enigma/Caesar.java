@@ -9,6 +9,7 @@ public class Caesar implements EnigmaService {
     private String name;
     private String key;
     private Scanner userInput;
+    private String alphabet = "abcdefghijklmnoprstuwqrstxyzv";
 
     public Caesar(String name) {
 		this.name = name;
@@ -35,9 +36,11 @@ public class Caesar implements EnigmaService {
         String caesar_text = "";
         int len = text.length();
         int shift;
+        
         if(this.key == null) {
             userInputKey();
             shift = Integer.parseInt(this.key);
+            shift = shift * -1;
         }
         else {
             shift = Integer.parseInt(this.key);
