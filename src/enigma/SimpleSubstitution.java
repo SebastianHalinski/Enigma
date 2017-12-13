@@ -7,6 +7,7 @@ public class SimpleSubstitution implements EnigmaService {
 	public static final boolean KEY_REQUIRED = true;
     private String alphabet = "abcdefghijklmnopqrstuvwxyz ";
 	private String name;
+    private String key;
 
 	public SimpleSubstitution(String name){
 		this.name = name;
@@ -29,7 +30,7 @@ public class SimpleSubstitution implements EnigmaService {
     }
 
     public void setKey(String key) {
-        System.out.println(key);
+        this.key = key;
     }
 
     private String generateCipherAlphabet(String key){
