@@ -19,7 +19,7 @@ public class SimpleSubstitution implements EnigmaService {
 
     public String encipher(String text){
         text = text.toLowerCase();
-        getKeyFromUser();
+        getKeyInput();
         String cipherAlphabet = generateCipherAlphabet(this.key);
         String encoded = new String();
 
@@ -39,7 +39,7 @@ public class SimpleSubstitution implements EnigmaService {
 
     public String decipher(String text){
         text = text.toLowerCase();
-        getKeyFromUser();
+        getKeyInput();
         String cipherAlphabet = generateCipherAlphabet(this.key);
         String decoded = new String();
 
@@ -69,14 +69,34 @@ public class SimpleSubstitution implements EnigmaService {
         this.key = key;
     }
 
-    private void getKeyFromUser(){
+    private Boolean isKeyOnlyLetters(String key){
+        char[] chars = key.toCharArray();
+
+        for (char c : chars) {
+            if(!Character.isLetter(c)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void getKeyInput(){
         reader = new Scanner(System.in);
-        if (isKeyRequired()){
+        Boolean isKeySetted = false;
+
+        while (!isKeySetted){
             System.out.println("Enter key: ");
             String key = reader.nextLine();
-            setKey(key);
+            if (isKeyOnlyLetters(key)){
+                setKey(key);
+                isKeySetted = true;
+            }
+            else{
+                System.out.println("Key must be only letters!");
+            }
         }
     }
+
 
     private String generateCipherAlphabet(String key){
         key = key.toLowerCase();
