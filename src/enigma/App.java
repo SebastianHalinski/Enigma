@@ -21,8 +21,8 @@ public class App {
         repo = new ServiceRepository();
         repo.register(new FakeEnigma("FakeEnigma"));
         repo.register(new ROT13("ROT13"));
-        repr.register(new Caesar("Caesar"));
-        
+        repo.register(new Caesar("Caesar"));
+
         if (args[0].equals("-l")) {
             for (String s : repo.listAll()) {
                 System.out.println(s);
