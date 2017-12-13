@@ -31,7 +31,16 @@ public class SimpleSubstitution implements EnigmaService {
     }
 
     public String decipher(String text){
-        return text;
+        getKeyFromUser();
+        String cipherAlphabet = generateCipherAlphabet(this.key);
+        String decoded = new String();
+
+        for(int i=0; i<text.length(); i++){
+            char temp = text.charAt(i);
+            int tempNums = new String(cipherAlphabet).indexOf(temp);
+            decoded += new String(alphabet).charAt(tempNums);
+        }
+        return decoded;
     }
 
     public String getName(){
