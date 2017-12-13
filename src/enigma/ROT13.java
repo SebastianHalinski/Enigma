@@ -7,8 +7,6 @@ public class ROT13 implements EnigmaService {
 	public static final boolean KEY_REQUIRED = false;
 	public static final String name = "ROT13";
 
-	}
-
 	public String encipher(String text){
 
 		char[] values = text.toCharArray();
