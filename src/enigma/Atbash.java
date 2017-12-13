@@ -15,6 +15,11 @@ public class Atbash implements EnigmaService {
         String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String encoder = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
         char[] values = text.toUpperCase().toCharArray();
+		for(char c : values){
+			if(!Character.isLetter(c)){
+				return "Wrong input";
+			}
+		}
         String encripted_word = "";
         for (int index = 0; index < values.length; index++) {
             char letter = values[index];
@@ -29,6 +34,11 @@ public class Atbash implements EnigmaService {
         String encoder = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String letters = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
         char[] values = text.toUpperCase().toCharArray();
+		for(char c : values){
+			if(!Character.isLetter(c)){
+				return "Wrong input";
+			}
+		}
         String encripted_word = "";
         for (int index = 0; index < values.length; index++) {
             char letter = values[index];
