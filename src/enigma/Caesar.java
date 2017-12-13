@@ -1,11 +1,13 @@
 package enigma;
 
 import services.EnigmaService;
+import java.util.Scanner;
 
 public class Caesar implements EnigmaService {
 
 	public static final boolean KEY_REQUIRED = false;
-	private String name;
+    private String name;
+    private Scanner userInput = new Scanner(System.in);
 
     public Caesar(String name)
     {
@@ -14,7 +16,17 @@ public class Caesar implements EnigmaService {
 
     public String encipher(String text)
     {
-		return "enc("+text+")";
+		int shift;
+        String s = "";
+        int len = text.length();
+        for(int x = 0; x < len; x++){
+            char c = (char)(text.charAt(x) + shift);
+            if (c > 'z')
+                s += (char)(text.charAt(x) - (26-shift));
+            else
+                s += (char)(text.charAt(x) + shift);
+        }
+        return s;
 	}
 
     public String decipher(String text)
@@ -34,7 +46,7 @@ public class Caesar implements EnigmaService {
 
     public void setKey(String key) 
     {
-        
+
     }
 
 
