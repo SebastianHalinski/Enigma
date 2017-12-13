@@ -54,8 +54,23 @@ public class Caesar implements EnigmaService {
 	}
     
     public void setKey(String key) {
-        this.key = key;
+        
+        if (isKeyOnlyNumbers(key)){
+            this.key = key;
+        }
+        else{
+            System.out.println("Key must be only numbers!");
+            System.exit(0);
+        }
     }
-
-
-}
+    private Boolean isKeyOnlyNumbers(String key){
+        char[] chars = key.toCharArray();
+ 
+        for (char c : chars) {
+            if(!Character.isDigit(c)){
+                return false;
+            }
+        }
+        return true;
+    }
+    }
