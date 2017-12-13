@@ -28,6 +28,10 @@ public class TerminalTranslator implements Module {
         String enigmaName = args[1];
         EnigmaService enigma = provider.getByName(enigmaName);
 
+        if(enigma.isKeyRequired()){
+            enigma.setKey(args[2]);
+        }
+
         Scanner scan = new Scanner(System.in);
         while (scan.hasNextLine()) {
             if (this.args[0].equals("-e")) {
