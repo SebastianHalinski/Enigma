@@ -7,8 +7,6 @@ public class Caesar implements EnigmaService {
 
 	public static final boolean KEY_REQUIRED = true;
 	public static final String name = "Caesar";
-
-    private String name;
     private String key;
 
 
