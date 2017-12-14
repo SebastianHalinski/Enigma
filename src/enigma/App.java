@@ -20,8 +20,10 @@ public class App {
     private void start() {
         repo = new ServiceRepository();
         repo.register(new FakeEnigma("FakeEnigma"));
-        repo.register(new ROT13("ROT13"));
         repo.register(new SimpleSubstitution());
+        repo.register(new Atbash());
+        repo.register(new ROT13());
+
 
         if (args[0].equals("-l")) {
             for (String s : repo.listAll()) {
