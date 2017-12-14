@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class TerminalTranslator implements Module {
 
+    public static final String name = "TerminalTranslator";
     private ServiceProvider provider;
     private String[] args;
 
@@ -19,7 +20,7 @@ public class TerminalTranslator implements Module {
     }
 
     public String getName() {
-        return "TerminalTranslator";
+        return this.name;
     }
 
     public void start() {
