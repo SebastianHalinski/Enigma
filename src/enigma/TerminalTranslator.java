@@ -24,10 +24,8 @@ public class TerminalTranslator implements Module {
     }
 
     public void start() {
-        String mode = args[0];
         String enigmaName = args[1];
         EnigmaService enigma = provider.getByName(enigmaName);
-
 
         try{
             if(enigma.isKeyRequired()){
