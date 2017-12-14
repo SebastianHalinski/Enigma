@@ -5,11 +5,7 @@ import services.EnigmaService;
 public class ROT13 implements EnigmaService {
 
 	public static final boolean KEY_REQUIRED = false;
-	private String name;
-
-	public ROT13(String name){
-		this.name = name;
-	}
+	public static final String name = "ROT13";
 
 	public String encipher(String text){
 
@@ -36,7 +32,7 @@ public class ROT13 implements EnigmaService {
     }
 
 	public String decipher(String text){
-	return "dec("+text+")";
+	    return encipher(text);
 }
 
 	public String getName(){
