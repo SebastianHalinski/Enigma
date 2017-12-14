@@ -47,5 +47,6 @@ public class TerminalTranslator implements Module {
 
             }
         }
+        scan.close();
     }
 }
