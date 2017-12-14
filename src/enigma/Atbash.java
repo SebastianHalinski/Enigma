@@ -12,7 +12,7 @@ public class Atbash implements EnigmaService {
 
 
     public String encipher(String text){
-        char[] values = text.toUpperCase().toCharArray();
+        char[] values = text.toCharArray();
 		for(char c : values){
 			if(!Character.isLetter(c)){
 				return "Wrong input";
@@ -29,7 +29,7 @@ public class Atbash implements EnigmaService {
 
 
     public String decipher(String text){
-        char[] values = text.toUpperCase().toCharArray();
+        char[] values = text.toCharArray();
 		for(char c : values){
 			if(!Character.isLetter(c)){
 				return "Wrong input";
