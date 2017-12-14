@@ -7,13 +7,9 @@ import java.util.LinkedHashSet;
 public class SimpleSubstitution implements EnigmaService {
 
 	public static final boolean KEY_REQUIRED = true;
-    private String alphabet = "abcdefghijklmnopqrstuvwxyz ";
-	private String name;
-    private String key;
-
-	public SimpleSubstitution(String name){
-		this.name = name;
-	}
+	public static final String name = "SimpleSubstitution";
+  private String alphabet = "abcdefghijklmnopqrstuvwxyz ";
+  private String key;
 
     public String encipher(String text){
         text = text.toLowerCase();
