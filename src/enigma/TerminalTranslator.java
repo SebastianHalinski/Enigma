@@ -3,7 +3,6 @@ package enigma;
 import app.Module;
 import services.EnigmaService;
 import registry.ServiceProvider;
-
 import java.util.Scanner;
 
 public class TerminalTranslator implements Module {
@@ -24,30 +23,30 @@ public class TerminalTranslator implements Module {
     }
 
     public void start() {
-        String mode = args[0];
-        String enigmaName = args[1];
+        int modeIndex = 0;
+        int enigmaNameIndex = 1;
+        int keyIndex = 2;
+        String enigmaName = args[enigmaNameIndex];
         EnigmaService enigma = provider.getByName(enigmaName);
-
 
         try{
             if(enigma.isKeyRequired()){
-                enigma.setKey(args[2]);
+                enigma.setKey(args[keyIndex]);
             }
         }
         catch(ArrayIndexOutOfBoundsException e){
             System.out.println("Error: The cipher needs a key!");
             System.exit(0);
-
         }
 
         Scanner scan = new Scanner(System.in);
         while (scan.hasNextLine()) {
-            if (this.args[0].equals("-e")) {
+            if (this.args[modeIndex].equals("-e")) {
                 System.out.println(enigma.encipher(scan.nextLine()));
-            } else if (this.args[0].equals("-d")) {
+            } else if (this.args[modeIndex].equals("-d")) {
                 System.out.println(enigma.decipher((scan.nextLine())));
-
             }
         }
+        scan.close();
     }
 }
