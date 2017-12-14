@@ -3,7 +3,6 @@ package enigma;
 import app.Module;
 import services.EnigmaService;
 import registry.ServiceProvider;
-
 import java.util.Scanner;
 
 public class TerminalTranslator implements Module {
