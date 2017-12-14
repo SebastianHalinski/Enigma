@@ -7,10 +7,11 @@ public class Atbash implements EnigmaService {
 	public static final boolean KEY_REQUIRED = false;
 	public static final String name = "Atbash";
 
+	public static final String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  public static final String encoder = "ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba";
+
 
     public String encipher(String text){
-        String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String encoder = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
         char[] values = text.toUpperCase().toCharArray();
 		for(char c : values){
 			if(!Character.isLetter(c)){
@@ -28,8 +29,6 @@ public class Atbash implements EnigmaService {
 
 
     public String decipher(String text){
-        String encoder = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String letters = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
         char[] values = text.toUpperCase().toCharArray();
 		for(char c : values){
 			if(!Character.isLetter(c)){
