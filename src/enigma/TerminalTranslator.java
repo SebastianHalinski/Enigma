@@ -28,8 +28,16 @@ public class TerminalTranslator implements Module {
         String enigmaName = args[1];
         EnigmaService enigma = provider.getByName(enigmaName);
 
-        if(enigma.isKeyRequired()){
-            enigma.setKey(args[2]);
+
+        try{
+            if(enigma.isKeyRequired()){
+                enigma.setKey(args[2]);
+            }
+        }
+        catch(ArrayIndexOutOfBoundsException e){
+            System.out.println("Error: The cipher needs a key!");
+            System.exit(0);
+
         }
 
         Scanner scan = new Scanner(System.in);
