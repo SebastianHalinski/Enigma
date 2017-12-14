@@ -19,7 +19,6 @@ public class App {
 
     private void start() {
         repo = new ServiceRepository();
-        repo.register(new FakeEnigma("FakeEnigma"));
         repo.register(new Caesar());
         repo.register(new SimpleSubstitution());
         repo.register(new Atbash());
